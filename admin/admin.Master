@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="OVMS.admin.admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="page" style="background-image: url('/Styles/BB.jpg')">
+        <div class="header">
+           <div class="title" 
+                style="width: 100%; height: 180px; background-color: #000000;">
+                
+                <asp:Image ID="Image1" runat="server" Height="180px" ImageUrl="~/Styles/TIT.gif" 
+                    Width="100%" />
+                
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Admin Home"/>
+                        <asp:MenuItem NavigateUrl="admin/agminlog.aspx" Text="Candidate">
+                            <asp:MenuItem NavigateUrl="~/admin/reg_can.aspx" Text="Register New" 
+                                Value="Register New"></asp:MenuItem>
+                            <asp:MenuItem Text="View and Delete" Value="View and Delete" 
+                                NavigateUrl="~/admin/v_can.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                         <asp:MenuItem NavigateUrl="~/admin/v_voter.aspx" Text="View Voter"/>
+                        <asp:MenuItem NavigateUrl="~/admin/viewfeedback.aspx" Text="View Feedback"/>
+                        <asp:MenuItem NavigateUrl="../Default.aspx" Text="Logout"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    
+    
+    </form>
+</body>
+</html>
